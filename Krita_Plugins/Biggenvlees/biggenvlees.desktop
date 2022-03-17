@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=biggenvlees
+X-Python-2-Compatible=false
+X-Krita-Manual=Manual.html
+Name=BiggenVlees
+Comment=A script that speeds up the process of pasting columns in the storyboard docker

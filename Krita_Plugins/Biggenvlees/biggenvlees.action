@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionCollection version="2" name="Scripts">
+    <Actions category="Scripts">
+        <text>Trucendoos</text>
+
+        <Action name="pykrita_biggenvlees">
+        <icon></icon>
+        <text>biggenvlees</text>
+        <whatsThis></whatsThis>
+        <toolTip>First creates a storyboard scene, then pastes the column from clipboard.</toolTip>
+        <iconText></iconText>
+        <activationFlags>10000</activationFlags>
+        <activationConditions>0</activationConditions>
+        <shortcut>shift+F10</shortcut>
+        <isCheckable>false</isCheckable>
+        <statusTip></statusTip>
+        </Action>
+    </Actions>
+</ActionCollection>
