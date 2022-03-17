@@ -127,3 +127,55 @@ for x in root.iterfind("param"):
     directory = ../../04_Storyboard/Demo/
 
 ################
+
+from krita import *
+import os
+import xml.etree.ElementTree as ET
+
+Krita.instance().action('save_incremental_version').trigger()
+settingRead = Krita.instance().readSetting('','ExportConfiguration-ANIMATION_EXPORT','')
+tree = str(settingRead)
+root = ET.fromstring(tree)
+
+for doc in Krita.instance().documents():
+    basename = doc.fileName()
+    print (os.path.basename(basename))
+
+
+019.00_HardcutFelixDoorSkipping_011.kra BUT
+##returns the current file minus 1
+
+#######################
+
+
+from krita import *
+import os
+import xml.etree.ElementTree as ET
+
+
+
+settingRead = Krita.instance().readSetting('','ExportConfiguration-ANIMATION_EXPORT','')
+tree = str(settingRead)
+root = ET.fromstring(tree)
+
+for doc in Krita.instance().documents():
+    #retrieve path    
+    filepath= doc.fileName()
+    #retrieve name
+    filename = os.path.basename(filepath)
+    print(filename)
+    size = len(filename)
+    nokra = filename[:size - 4]
+    print(nokra)
+
+    #split text around '_'
+    nokra = nokra.split('_')
+
+    filenumber = int(nokra[-1])
+    filenumber+= 1
+    print(filenumber)
+
+    incrementname = '_'.join(nokra[:-1])+"_"+str(filenumber).zfill(3)+".kra"
+    print (incrementname)
+    savedfolder = os.path.split(filepath)[0] + '\\'+ incrementname
+    print (savedfolder)

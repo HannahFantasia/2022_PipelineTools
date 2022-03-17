@@ -1,18 +1,9 @@
 # BBD's Krita Script Starter Feb 2018
 
-from krita import Extension
 from krita import *
-from PyQt5 import QtCore, QtGui, QtWidgets, QtSvg, uic
-import sip
 import pprint
-import time
-from contextlib import redirect_stdout
-import io
-import re
-import json
-import pprint
-from datetime import datetime
 import sys
+import xml.etree.ElementTree as ET
 
 EXTENSION_ID = 'pykrita_biggenvlees'
 MENU_ENTRY = 'biggenvlees_run'
@@ -36,8 +27,4 @@ class Biggenvlees(Extension):
         action.triggered.connect(self.action_triggered)
 
     def action_triggered(self):
-        qdock = next((w for w in Krita.instance().dockers() if w.objectName() == 'StoryboardDocker'), None)
-        wobj = qdock.findChild(QToolButton,'btnCreateScene')
-        wobj.click()
-        Krita.instance().action('paste_columns_from_clipboard').trigger()
         pass  # your active code goes here.
