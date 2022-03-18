@@ -7,7 +7,7 @@
         <icon></icon>
         <text>berenvoedsel</text>
         <whatsThis></whatsThis>
-        <toolTip>First creates a storyboard scene, then pastes the column from clipboard.</toolTip>
+        <toolTip>storyboard nyoom</toolTip>
         <iconText></iconText>
         <activationFlags>10000</activationFlags>
         <activationConditions>0</activationConditions>

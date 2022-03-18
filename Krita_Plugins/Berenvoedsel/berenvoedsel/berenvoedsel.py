@@ -24,7 +24,7 @@ class Berenvoedsel(Extension):
         action = window.createAction(EXTENSION_ID, MENU_ENTRY, "tools/scripts")
         # parameter 1 = the name that Krita uses to identify the action
         # parameter 2 = the text to be added to the menu entry for this script
-        # parameter 3 = location of menu entryW
+        # parameter 3 = location of menu entry
         action.triggered.connect(self.action_triggered)
 
 def sleep_qt(value):
@@ -101,13 +101,6 @@ def main():
     frame_end = str(frame_end)
     last_document_path = str(incrementname)
 
-    width = 1960
-    width = str(width)
-    height = 1789
-    height = str(height)
-    framerate = 24
-    framerate = str(framerate)
-
     storedict = {
     'basename': basename,
     'custom_ffmpeg_options': '-crf 23 -preset medium -profile:v baseline -pix_fmt yuv420p',
@@ -125,15 +118,15 @@ def main():
     'frame_export/ImageContainsTransparency': 'false',
     'frame_export/sRGB': 'true',
     'frame_mimetype': 'image/png',
-    'framerate': framerate,
-    'height': height,
+    'framerate': '24',
+    'height': '1789',
     'include_audio': 'false',
     'last_document_path': last_document_path,
     'last_frame': frame_end,
     'only_unique_frames': 'true',
     'sequence_start': '0',
     'video_mimetype': 'video/mp4',
-    'width': width
+    'width': '1960'
     }
 
     for element in root.iterfind("param"):
