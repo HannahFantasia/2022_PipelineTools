@@ -148,7 +148,7 @@ class Berenvoedsel(Extension):
         Krita.instance().writeSetting('','ExportConfiguration-ANIMATION_EXPORT',str_xml)
 
         sleep_qt(300)
-        Krita.instance().action('render_animation').trigger()
+        Krita.instance().action('render_animation_again').trigger()
 
         pass
 
