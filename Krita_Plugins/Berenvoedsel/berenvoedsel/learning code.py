@@ -142,7 +142,7 @@ for doc in Krita.instance().documents():
     print (os.path.basename(basename))
 
 
-019.00_HardcutFelixDoorSkipping_011.kra BUT
+019.00_HardcutFelixDoorSkipping_011.kra
 ##returns the current file minus 1
 
 #######################
@@ -159,7 +159,7 @@ tree = str(settingRead)
 root = ET.fromstring(tree)
 
 for doc in Krita.instance().documents():
-    #retrieve path    
+    #retrieve path
     filepath= doc.fileName()
     #retrieve name
     filename = os.path.basename(filepath)
@@ -178,4 +178,224 @@ for doc in Krita.instance().documents():
     incrementname = '_'.join(nokra[:-1])+"_"+str(filenumber).zfill(3)+".kra"
     print (incrementname)
     savedfolder = os.path.split(filepath)[0] + '\\'+ incrementname
+    doc.saveAs(savedfolder)
     print (savedfolder)
+
+
+#########################
+
+        filepath= doc.fileName()
+        #retrieve name
+        path_split = os.path.split(filepath)
+        filename = path_split[1]
+        print(filename)
+        nokra = filename.split(".")[0]
+        print(nokra)
+        #split text around '_'
+        split_file_underscore = nokra.split('_')
+        filenumber = int(split_file_underscore[-1])
+        print(filenumber)
+        filenumber+= 1
+        filenumber_pad = str(filenumber).zfill(3)
+        incrementname = f'{path_split[0]}\\{nokra[:-4]}_{filenumber_pad}.kra'
+        print (incrementname)
+
+
+for doc in Krita.instance().documents():
+    filepath= doc.fileName()
+    #retrieve name
+    path_split = os.path.split(filepath)
+    filename = path_split[1]
+    print(filename)
+    nokra = filename.split(".")[0]
+    print(nokra)
+
+    #split text around '_'
+    split_file_underscore = nokra.split('_')
+
+    filenumber = int(split_file_underscore[-1])
+    print(filenumber)
+    filenumber+= 1
+    filenumber_pad = str(filenumber).zfill(3)
+    incrementname = f'{path_split[0]}\\{nokra[:-4]}_{filenumber_pad}.kra'
+    print (incrementname)
+
+
+#########################
+
+from krita import *
+import os
+import xml.etree.ElementTree as ET
+settingRead = Krita.instance().readSetting('','ExportConfiguration-ANIMATION_EXPORT','')
+tree = str(settingRead)
+root = ET.fromstring(tree)
+
+for doc in Krita.instance().documents():
+    filepath= doc.fileName()
+    #retrieve name
+    path_split = os.path.split(filepath)
+    filename = path_split[1]
+    print(filename)
+    nokra = filename.split(".")[0]
+    print(nokra)
+
+    #split text around '_'
+    split_file_underscore = nokra.split('_')
+
+    filenumber = int(split_file_underscore[-1])
+    print(filenumber)
+    filenumber+= 1
+    filenumber_pad = str(filenumber).zfill(3)
+    incrementname = f'{path_split[0]}\\{nokra[:-4]}_{filenumber_pad}.kra'
+    print (incrementname)
+
+######################
+
+for doc in Krita.instance().documents():
+    Krita.instance().action('save_incremental_version').trigger()
+
+    settingRead = Krita.instance().readSetting('','ExportConfiguration-ANIMATION_EXPORT','')
+    tree = str(settingRead)
+    root = ET.fromstring(tree)
+    print (os.path.basename(filename))
+    elemList = []
+    for x in root.iterfind("param"):
+        paraname = x.attrib
+        parainput = x.text
+        elemList.append(paraname)
+        elemList = list(set(elemList))
+        print (paraname,parainput)
+
+#################
+
+from krita import *
+import os
+import xml.etree.ElementTree as ET
+
+for doc in Krita.instance().documents():
+    filepath= doc.fileName()
+    #retrieve name
+    path_split = os.path.split(str(filepath))
+    filename = path_split[1]
+    nokra = filename.split(".")[0]
+    #split text around '_'
+    split_file_underscore = nokra.split('_')
+    #pad out incremented file number
+    filenumber = int(split_file_underscore[-1]) + 1
+    filenumber_pad = str(filenumber).zfill(3)
+    #join path together with everything we've gathered
+    incrementname = f'{path_split[0]}\\{nokra[:-3]}{filenumber_pad}.kra'
+    doc.saveAs(incrementname)
+    print (incrementname)
+
+################
+
+from krita import *
+import os
+
+def sleep_qt(value):
+    """Do a sleep of `value` milliseconds
+    use of python timer.sleep() method seems to be not recommanded in a Qt application.. ??
+    """
+
+    loop = QEventLoop()
+    QTimer.singleShot(value, loop.quit)
+    loop.exec()
+
+def main():
+
+    newpath = 'C:\\Users\\koter\\Desktop\\test\\test_002.kra'
+
+    Krita.instance().action('save_incremental_version').trigger()
+    while os.path.isfile(newpath) == False:
+        sleep_qt(300)
+
+    for docs in Krita.instance().documents():
+        filename = docs.fileName()
+        print (os.path.basename(filename))
+main()
+
+
+################################
+
+from krita import *
+import os
+
+def sleep_qt(value):
+    """Do a sleep of `value` milliseconds
+
+    use of python timer.sleep() method seems to be not recommanded in a Qt application.. ??
+    """
+    loop = QEventLoop()
+    QTimer.singleShot(value, loop.quit)
+    loop.exec()
+
+def main():
+
+    for doc in Krita.instance().documents():
+        filepath= doc.fileName()
+        #retrieve name
+        path_split = os.path.split(str(filepath))
+        filename = path_split[1]
+        nokra = filename.split(".")[0]
+        #split text around '_'
+        split_file_underscore = nokra.split('_')
+        #pad out incremented file number
+        filenumber = int(split_file_underscore[-1]) + 1
+        filenumber_pad = str(filenumber).zfill(3)
+        #join path together with everything we've gathered
+        incrementname = f'{path_split[0]}\\{nokra[:-3]}{filenumber_pad}.kra'
+        doc.saveAs(incrementname)
+        print (incrementname)
+
+    while os.path.isfile(incrementname == False:
+        sleep_qt(200)
+
+        docs = Krita.instance().openDocument(incrementname)
+        Krita.instance().activeWindow().addView(docs)
+
+main()
+
+
+###############
+
+
+from krita import *
+import os
+
+def sleep_qt(value):
+    """Do a sleep of `value` milliseconds
+
+    use of python timer.sleep() method seems to be not recommanded in a Qt application.. ??
+    """
+    loop = QEventLoop()
+    QTimer.singleShot(value, loop.quit)
+    loop.exec()
+
+def main():
+
+    for doc in Krita.instance().documents():
+        filepath= doc.fileName()
+        #retrieve name
+        path_split = os.path.split(str(filepath))
+        filename = path_split[1]
+        nokra = filename.split(".")[0]
+        #split text around '_'
+        split_file_underscore = nokra.split('_')
+        #pad out incremented file number
+        filenumber = int(split_file_underscore[-1]) + 1
+        filenumber_pad = str(filenumber).zfill(3)
+        #join path together with everything we've gathered
+        incrementname = f'{path_split[0]}\\{nokra[:-3]}{filenumber_pad}.kra'
+        doc.saveAs(incrementname)
+        doc.close()
+
+        print (incrementname)
+
+        while os.path.isfile(incrementname) == False:
+            sleep_qt(200)
+
+        docs = Krita.instance().openDocument(incrementname)
+        Krita.instance().activeWindow().addView(docs)
+
+main()
