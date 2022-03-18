@@ -7,7 +7,7 @@
         <icon></icon>
         <text>berenvoedsel</text>
         <whatsThis></whatsThis>
-        <toolTip>Quickly exports storyboard demos</toolTip>
+        <toolTip>First creates a storyboard scene, then pastes the column from clipboard.</toolTip>
         <iconText></iconText>
         <activationFlags>10000</activationFlags>
         <activationConditions>0</activationConditions>
