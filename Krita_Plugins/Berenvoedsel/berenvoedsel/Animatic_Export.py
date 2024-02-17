@@ -6,8 +6,8 @@ import os
 import sys
 import xml.etree.ElementTree as ET
 
-EXTENSION_ID = 'pykrita_berenvoedsel'
-MENU_ENTRY = 'berenvoedsel'
+EXTENSION_ID = 'pykrita_Animatic_Export'
+MENU_ENTRY = 'Animatic_Export'
 
 
 def sleep_qt(value):
@@ -20,7 +20,7 @@ def sleep_qt(value):
     loop.exec()
     pass
 
-class Berenvoedsel(Extension):
+class Animatic_Export(Extension):
 
     def __init__(self, parent):
         # Always initialise the superclass.
@@ -38,7 +38,7 @@ class Berenvoedsel(Extension):
         # parameter 3 = location of menu entry
         action.triggered.connect(self.action_triggered)
 
-    def berenvoedsel_function(self):
+    def Animatic_Export_function(self):
         for doc in Krita.instance().documents():
             filepath= doc.fileName()
             #retrieve name
@@ -153,5 +153,5 @@ class Berenvoedsel(Extension):
         pass
 
     def action_triggered(self):
-        self.berenvoedsel_function()
+        self.Animatic_Export_function()
         pass  # your active code goes here.
