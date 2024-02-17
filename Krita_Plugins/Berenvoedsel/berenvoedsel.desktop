@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Service
 ServiceTypes=Krita/PythonPlugin
-X-KDE-Library=berenvoedsel
+X-KDE-Library=Animatic_Export
 X-Python-2-Compatible=false
 X-Krita-Manual=Manual.html
-Name=Berenvoedsel
+Name=Animatic_Export
 Comment=A krita addon that makes saving storyboards and animations for the Trucendoos easier.
