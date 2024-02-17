@@ -1,6 +1,6 @@
-from .berenvoedsel import Berenvoedsel
+from .Animatic_Export import Animatic_Export
 
 app = Krita.instance()
 # Instantiate your class:
-extension = Berenvoedsel(parent = app)
+extension = Animatic_Export(parent = app)
 app.addExtension(extension)
