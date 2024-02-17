@@ -3,9 +3,9 @@
     <Actions category="Scripts">
         <text>Trucendoos</text>
 
-        <Action name="pykrita_berenvoedsel">
+        <Action name="pykrita_Animatic_Export">
         <icon></icon>
-        <text>berenvoedsel</text>
+        <text>Animatic_Export</text>
         <whatsThis></whatsThis>
         <toolTip>storyboard nyoom</toolTip>
         <iconText></iconText>
