@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionCollection version="2" name="Scripts">
+    <Actions category="Scripts">
+        <text>Trucendoos</text>
+
+        <Action name="pykrita_Animatic_Export">
+        <icon></icon>
+        <text>Animatic_Export</text>
+        <whatsThis></whatsThis>
+        <toolTip>storyboard nyoom</toolTip>
+        <iconText></iconText>
+        <activationFlags>10000</activationFlags>
+        <activationConditions>0</activationConditions>
+        <shortcut>shift+F10</shortcut>
+        <isCheckable>false</isCheckable>
+        <statusTip></statusTip>
+        </Action>
+    </Actions>
+</ActionCollection>
