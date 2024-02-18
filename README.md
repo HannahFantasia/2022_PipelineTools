@@ -7,4 +7,4 @@ Installation is done by taking the folders in the root files, turning them into 
 
 `tools>scripts>import python plugin from file.`
 
-These tools don't have their own buttons but they are in the `tools>scripts` tab
+These tools don't have their own buttons but they can be run in the `tools>scripts` dropdown menu.
