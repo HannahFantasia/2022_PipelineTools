@@ -14,11 +14,11 @@ import pprint
 from datetime import datetime
 import sys
 
-EXTENSION_ID = 'pykrita_biggenvlees'
-MENU_ENTRY = 'biggenvlees_run'
+EXTENSION_ID = 'pykrita_CopyPaste_Frame_Board'
+MENU_ENTRY = 'CopyPaste_Frame_Board_run'
 
 
-class Biggenvlees(Extension):
+class CopyPaste_Frame_Board(Extension):
 
     def __init__(self, parent):
         # Always initialise the superclass.
