@@ -3,11 +3,11 @@
     <Actions category="Scripts">
         <text>Trucendoos</text>
 
-        <Action name="pykrita_biggenvlees">
+        <Action name="pykrita_CopyPaste_Frame_Board">
         <icon></icon>
-        <text>biggenvlees</text>
+        <text>CopyPaste_Frame_Board</text>
         <whatsThis></whatsThis>
-        <toolTip>First creates a storyboard scene, then pastes the column from clipboard.</toolTip>
+        <toolTip>First creates a storyboard scene, then pastes the copied layer to the board. Useful when re-using assets a lot.</toolTip>
         <iconText></iconText>
         <activationFlags>10000</activationFlags>
         <activationConditions>0</activationConditions>
